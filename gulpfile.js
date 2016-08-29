@@ -13,7 +13,23 @@ require('laravel-elixir-vue');
  |
  */
 
-elixir(mix => {
+elixir(function (mix){
     mix.sass('app.scss')
-       .webpack('app.js');
+        .styles([
+         'sb-admin-2.css',
+         'sb-admin-2.min.css',
+         'bootstrap.css',
+         'bootstrap.min.css',
+         'font-awesome.css',
+         'font-awesome.min.css'
+         ],'./public/css/admin.css')
+
+         .scripts([
+         'sb-admin-2.js',
+         'sb-admin-2.min.js',
+         'bootstrap.js',
+         'bootstrap.min.js',
+         'jquery.js',
+         'jquery.min.js'
+         ],'./public/js/admin.js')
 });
