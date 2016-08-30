@@ -37,6 +37,9 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Laravel
                 </a>
+                <a class="navbar-brand" href="{{ url('/admin') }}">
+                    admin panel
+                </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
