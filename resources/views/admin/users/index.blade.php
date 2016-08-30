@@ -3,6 +3,14 @@
     user
 @endsection
 @section('content')
+    @if(session('message'))
+        <script>
+            swal({
+                title: "{!! session('message') !!}",
+                type : "success"
+            });
+        </script>
+    @endif
     <a href="{{route('users.create')}}" class="btn btn-primary pull-left">add users</a>
     <table class="table table-striped">
         <thead>
@@ -27,10 +35,19 @@
                    <td>{{empty($user->role->name)?"user has no role" : $user->role->name}}</td>
                    <td>{{$user->created_at->diffForHumans()}}</td>
                    <td>{{$user->updated_at->diffForHumans()}}</td>
-                   {{--<form action="DELETE" action="{{route('users.destroy',$user->id}}"></form>--}}
-                   {{--<input type="submit">--}}
-                   {{--</form>--}}
-               </tr>
+                   <td>
+                   {!! Form::open(['method'=>'DELETE','route'=>['users.destroy',$user->id]]) !!}
+                       {{--<button type="submit">--}}
+                           {{--<span class="glyphicon glyphicon-trash"></span>--}}
+                       {{--</button>--}}
+                       <div class="circle">
+                           <button type="submit" class="submit-with-icon">
+                               <span class="glyphicon glyphicon-trash"></span>
+                           </button>
+                       </div>
+                   {!! Form::close() !!}
+                   </td>
+              </tr>
             @endforeach
         @endif
         </tbody>

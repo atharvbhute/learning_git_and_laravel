@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
@@ -38,11 +39,12 @@ class AdminUsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         $all = $request->all();
         $all['password']=bcrypt($request->password);
         User::create($all);
+        session()->flash('message',$request->name.'\'s '. 'account created succesfuly');
         return redirect(route('users.index'));
     }
 
@@ -88,6 +90,7 @@ class AdminUsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::findOrFail($id)->delete();
+        return redirect(route('users.index'));
     }
 }
