@@ -42,7 +42,6 @@ class AdminUsersController extends Controller
     public function store(UserRequest $request)
     {
         $all = $request->all();
-        $all['password']=bcrypt($request->password);
         User::create($all);
         session()->flash('message',$request->name.'\'s '. 'account created succesfuly');
         return redirect(route('users.index'));

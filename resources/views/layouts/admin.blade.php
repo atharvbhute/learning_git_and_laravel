@@ -129,6 +129,11 @@
 </body>
 <script src="{{asset('js/admin.js')}}"></script>
 <script src="{{asset('js/app.js')}}"></script>
+<!-- The best place for this one is your <HEAD> tag -->
+<script>UPLOADCARE_PUBLIC_KEY = "demopublickey";</script>
+<script src="https://ucarecdn.com/widget/2.10.0/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>
+
+<!-- This is where the widget will be. Don't forget the name attribute! -->
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 

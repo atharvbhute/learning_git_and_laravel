@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <h5>add user section</h5>
-    {!! Form::open(['method'=>'POST','route'=>'users.store']) !!}
+    {!! Form::open(['method'=>'POST','route'=>'users.store','files'=>true]) !!}
     <div class="form-group {{$errors->has('name') ? 'has-error' : ''}}">
     {!! Form::text('name',null,['placeholder'=>'name','class'=>'form-control']) !!}
         @if($errors->has('name'))
@@ -30,15 +30,38 @@
         @endif
     </div>
     <div class="form-group">
+    <script>
+        UPLOADCARE_PUBLIC_KEY = "977a7188b76de62ffe09";
+        UPLOADCARE_LOCALE = 'en';
+        UPLOADCARE_LOCALE_TRANSLATIONS = {
+            buttons: {
+                cancel: 'Cancel',
+                remove: 'Remove',
+                choose: {
+                    files: {
+                        one: 'Choose a file',
+                        other: 'Choose files'
+                    },
+                    images: {
+                        one: 'Choose an image',
+                        other: 'Choose images'
+                    }
+                }
+            }
+        };
+    </script>
+    <input type="hidden"
+           role="uploadcare-uploader"
+           name="image"
+           data-images-only
+           data-crop="16:9"
+    />
+    </div>
+    <div class="form-group">
     {!! Form::select('role_id',$roles,3,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
     {!! Form::submit('add',['class'=>'btn btn-primary','id'=>'sweetalert']) !!}
     </div>
     {!! Form::close() !!}
-    <script>
-    $("#sweetalert",click(function () {
-    swal("Good job!", "user is created", "success");
-    }));
-    </script>
 @endsection

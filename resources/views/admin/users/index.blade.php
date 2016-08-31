@@ -16,6 +16,7 @@
         <thead>
           <tr>
             <th>id</th>
+            <th>prifile pic</th>
             <th>name</th>
             <th>Email</th>
             <th>status</th>
@@ -29,6 +30,7 @@
             @foreach($users as $user)
               <tr>
                    <td>{{$user->id}}</td>
+                   <td><img width="65px" src="{{empty($user->image) ? 'http://image.shutterstock.com/z/stock-vector-male-profile-picture-placeholder-vector-illustration-design-social-profile-template-avatar-450966898.jpg' : $user->image}}" alt=""></td>
                    <td>{{$user->name}}</td>
                    <td>{{$user->email}}</td>
                    <td>{{$user->is_active == 1 ? 'active' : 'not active now'}}</td>
