@@ -23,6 +23,8 @@
             <th>role</th>
             <th>created at</th>
             <th>updated at</th>
+            <th>edit</th>
+            <th>delete</th>
           </tr>
         </thead>
         <tbody>
@@ -30,18 +32,16 @@
             @foreach($users as $user)
               <tr>
                    <td>{{$user->id}}</td>
-                   <td><img width="65px" src="{{empty($user->image) ? 'http://image.shutterstock.com/z/stock-vector-male-profile-picture-placeholder-vector-illustration-design-social-profile-template-avatar-450966898.jpg' : $user->image}}" alt=""></td>
+                   <td><img width="65px" src="{{empty($user->image) ? 'http://image.shutterstock.com/z/stock-vector-male-profile-picture-placeholder-vector-illustration-design-social-profile-template-avatar-450966898.jpg' : $user->image.'-/resize/62x62/-/quality/best/'}}" alt=""></td>
                    <td>{{$user->name}}</td>
                    <td>{{$user->email}}</td>
                    <td>{{$user->is_active == 1 ? 'active' : 'not active now'}}</td>
                    <td>{{empty($user->role->name)?"user has no role" : $user->role->name}}</td>
                    <td>{{$user->created_at->diffForHumans()}}</td>
                    <td>{{$user->updated_at->diffForHumans()}}</td>
-                   <td>
+                  <td><a href="{{route('users.edit',$user->id)}}"><i class="glyphicon glyphicon-edit"></i></a></td>
+                  <td>
                    {!! Form::open(['method'=>'DELETE','route'=>['users.destroy',$user->id]]) !!}
-                       {{--<button type="submit">--}}
-                           {{--<span class="glyphicon glyphicon-trash"></span>--}}
-                       {{--</button>--}}
                        <div class="circle">
                            <button type="submit" class="submit-with-icon">
                                <span class="glyphicon glyphicon-trash"></span>

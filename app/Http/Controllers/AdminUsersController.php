@@ -66,7 +66,10 @@ class AdminUsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $roles  = Role::pluck('name', 'id');
+        return view('admin.users.edit',compact('user','roles'));
+
     }
 
     /**
@@ -78,7 +81,8 @@ class AdminUsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        User::findOrFail($id)->update($request->all());
+        return redirect(route('users.index'));
     }
 
     /**

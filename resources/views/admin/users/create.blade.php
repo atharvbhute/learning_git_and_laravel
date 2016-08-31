@@ -33,28 +33,15 @@
     <script>
         UPLOADCARE_PUBLIC_KEY = "977a7188b76de62ffe09";
         UPLOADCARE_LOCALE = 'en';
-        UPLOADCARE_LOCALE_TRANSLATIONS = {
-            buttons: {
-                cancel: 'Cancel',
-                remove: 'Remove',
-                choose: {
-                    files: {
-                        one: 'Choose a file',
-                        other: 'Choose files'
-                    },
-                    images: {
-                        one: 'Choose an image',
-                        other: 'Choose images'
-                    }
-                }
-            }
+        UPLOADCARE_LIVE = 'false'
         };
     </script>
     <input type="hidden"
            role="uploadcare-uploader"
            name="image"
            data-images-only
-           data-crop="16:9"
+           data-crop="1:1"
+           data-clearable="true"
     />
     </div>
     <div class="form-group">
