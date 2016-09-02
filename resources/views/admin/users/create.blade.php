@@ -33,7 +33,6 @@
     <script>
         UPLOADCARE_PUBLIC_KEY = "977a7188b76de62ffe09";
         UPLOADCARE_LOCALE = 'en';
-        UPLOADCARE_LIVE = 'false'
         };
     </script>
     <input type="hidden"

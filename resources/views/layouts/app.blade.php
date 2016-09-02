@@ -1,3 +1,8 @@
+<?php
+use App\User;
+use Illuminate\Support\Facades\Auth;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +43,7 @@
                     Laravel
                 </a>
                 <a class="navbar-brand" href="{{ url('/admin') }}">
-                    admin panel
+                     admin panel
                 </a>
             </div>
 

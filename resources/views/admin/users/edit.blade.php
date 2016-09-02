@@ -10,7 +10,7 @@
     <div class="col-sm-9">
     {!! Form::model($user,['method'=>'PUT','route'=>['users.update',$user->id],'files'=>true]) !!}
     <div class="form-group {{$errors->has('name') ? 'has-error' : ''}}">
-        {!! Form::text('name',$user->name,['placeholder'=>'name','class'=>'form-control']) !!}
+        {!! Form::text('name',null,['placeholder'=>'name','class'=>'form-control']) !!}
         @if($errors->has('name'))
             <span class="help-block">
                 <strong>{{$errors->first('name')}}</strong>
@@ -18,7 +18,7 @@
         @endif
     </div>
     <div class="form-group {{$errors->has('email') ? 'has-error' : ''}}">
-        {!! Form::email('email',$user->email,['placeholder'=>'email','class'=>'form-control']) !!}
+        {!! Form::email('email',null,['placeholder'=>'email','class'=>'form-control']) !!}
         @if($errors->has('email'))
             <span class="help-block">
                 <strong>{{$errors->first('email')}}</strong>
@@ -43,7 +43,7 @@
         />
     </div>
     <div class="form-group">
-        {!! Form::select('role_id',$roles,$user->role_id,['class'=>'form-control']) !!}
+        {!! Form::select('role_id',$roles,null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
         {!! Form::submit('update',['class'=>'btn btn-primary']) !!}

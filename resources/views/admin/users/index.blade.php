@@ -21,8 +21,8 @@
             <th>Email</th>
             <th>status</th>
             <th>role</th>
-            <th>created at</th>
-            <th>updated at</th>
+            <th>created</th>
+            <th>updated</th>
             <th>edit</th>
             <th>delete</th>
           </tr>
@@ -40,10 +40,11 @@
                    <td>{{$user->created_at->diffForHumans()}}</td>
                    <td>{{$user->updated_at->diffForHumans()}}</td>
                   <td><a href="{{route('users.edit',$user->id)}}"><i class="glyphicon glyphicon-edit"></i></a></td>
+
                   <td>
-                   {!! Form::open(['method'=>'DELETE','route'=>['users.destroy',$user->id]]) !!}
+                   {!! Form::open(['method'=>'DELETE','route'=>['users.destroy',$user->id],'onsubmit'=>'return confirm("are you sure")']) !!}
                        <div class="circle">
-                           <button type="submit" class="submit-with-icon">
+                           <button type="submit" class="submit-with-icon" id="delete-confo">
                                <span class="glyphicon glyphicon-trash"></span>
                            </button>
                        </div>
