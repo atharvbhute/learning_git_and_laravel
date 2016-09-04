@@ -96,10 +96,10 @@
                         <a href="{{route('users.index')}}"><i class="fa fa-table fa-fw"></i> users</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                        <a href="{{route('posts.index')}}"><i class="fa fa-edit fa-fw"></i>posts</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="{{route('categories.index')}}"><i class="fa fa-dashboard fa-fw"></i>categories</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
@@ -136,6 +136,9 @@
 <script src="https://ucarecdn.com/widget/2.10.0/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>
 <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
 <script src="{{asset('js/js.js')}}"></script>
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea' });</script>
+
 <!-- This is where the widget will be. Don't forget the name attribute! -->
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

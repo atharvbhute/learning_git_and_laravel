@@ -25,8 +25,10 @@ Route::group(['middleware'=>'admin'],function (){
     Route::get('/admin',function (){
         return view('admin.index');
     });
-
     Route::resource('/admin/categories','AdminCategoriesController');
+
+    Route::resource('/admin/posts','AdminPostsController');
+    Route::DELETE('/admin/posts/delimage/{id}','AdminPostsController@delimage');
 
     Route::resource('/admin/users','AdminUSersController');
 });

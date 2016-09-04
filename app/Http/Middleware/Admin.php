@@ -21,6 +21,8 @@ class Admin
             if(!Auth::user()->isAdmin()){
                 return redirect('/home');
             }
+        }else{
+            return redirect('/home');
         }
         return $next($request);
     }
