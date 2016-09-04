@@ -102,7 +102,7 @@
                         <a href="{{route('categories.index')}}"><i class="fa fa-dashboard fa-fw"></i>categories</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="{{route('photos.index')}}"><i class="fa fa-dashboard fa-fw"></i>photos</a>
                     </li>
                 </ul>
             </div>
